@@ -10,6 +10,7 @@
                 <h5>{{ $post->created_at->format('d/m/Y') }}</h5>
 
                 <p>{{ $post->body }}</p>
+                <a href="{{ route('posts.show', $post->slug ) }}">Read more</a>
             </div>
         @empty
             <p>No post found. <a href="{{ route('posts.create') }}">Create a new one</a> </p>
