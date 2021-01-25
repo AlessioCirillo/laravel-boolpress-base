@@ -6,7 +6,7 @@
         <h5>Last update: {{ $post->updated_at->diffForHumans() }}</h5>
 
         <div class="actions mb-5">
-            <a class="btn btn-primary" href="#">Edit</a>
+            <a class="btn btn-primary" href="{{ route('posts.edit', $post->slug) }}">Edit</a>
         </div>
 
         @if(!empty($post->path_img))
