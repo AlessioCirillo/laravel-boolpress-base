@@ -109,8 +109,18 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        // GET DATA FORM FORM
+        $data = $request->all();
+
+        // VALIDAZIONE
+        $request->validate($this->ruleValidation());
+
+        // get post to update
+        $post = Post::find($id);
+
+        // SLUG
+        $data['slug'] = Str::slug($data['title'], '-');
     }
 
     /**
